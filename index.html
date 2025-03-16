@@ -58,24 +58,33 @@
                 <div class="col-lg-5 d-none d-lg-block">
                     <div class="contact-form">
                         <h4 class="mb-4">Solicita Información</h4>
-                        <form>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Nombre y Apellido" required>
-                            </div>
-                            <div class="mb-3">
-                                <input type="tel" class="form-control" placeholder="Teléfono" required>
-                            </div>
-                            <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="Email" required>
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Comuna" required>
-                            </div>
-                            <div class="mb-3">
-                                <textarea class="form-control" placeholder="Escribe tu mensaje"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Enviar</button>
-                        </form>
+                            <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                                <!-- Campo oculto para detectar bots -->
+                                <p class="d-none">
+                                    <label>No llenar si eres humano: <input name="bot-field" /></label>
+                                </p>
+                                
+                                <!-- Campo oculto necesario para formularios de Netlify -->
+                                <input type="hidden" name="form-name" value="contacto">
+                                
+                                <div class="mb-3">
+                                    <input type="text" name="nombre" class="form-control" placeholder="Nombre y Apellido" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="tel" name="telefono" class="form-control" placeholder="Teléfono" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" name="comuna" class="form-control" placeholder="Comuna" required>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea name="mensaje" class="form-control" placeholder="Escribe tu mensaje" rows="4"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                            </form>
+
                     </div>
                 </div>
             </div>
@@ -130,7 +139,7 @@
             <!-- Primera columna: Logo -->
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="footer-logo">
-                    <img src="./images/logo.webp" alt="Vergel Servicios Logo">
+                    <img src="./images/logo.png" alt="Vergel Servicios Logo">
                 </div>
             </div>
             
@@ -140,7 +149,7 @@
                 <p>Somos Vergel Servicios, una empresa creada para dar servicios dedicados a la Administración residencial de condominios y edificios.</p>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/vergelservicios/"><i class="fab fa-instagram"></i></a>
                     <a href="https://wa.me/56322769310?text=Hola%2C%20%C2%BFEn%20qu%C3%A9%20te%20puedo%20ayudar%3F" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
@@ -155,7 +164,7 @@
                     </li>
                     <li>
                         <img src="https://www.lof360.cl/wp-content/uploads/2024/08/wd-envelope-light.svg" alt="Email">
-                        <span>info@vergelservicios.cl</span>
+                        <span>contacto@vergelservicios.cl</span>
                     </li>
                 </ul>
             </div>
